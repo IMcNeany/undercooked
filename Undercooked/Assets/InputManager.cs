@@ -7,7 +7,6 @@ public class InputManager : MonoBehaviour {
 
     private float Horizontal = 0.0f;
     private float Vertical = 0.0f;
-    private bool Action = false;
 
     // Use this for initialization
     void Start () {
@@ -30,7 +29,6 @@ public class InputManager : MonoBehaviour {
         }
 
         Debug.Log(new Vector2(Horizontal, Vertical));
-
     }
 
     public float getHorizontal()

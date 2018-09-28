@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ExampleMovement : MonoBehaviour {
 
-    public int playerNumber;
     
     // Use this for initialization
 	void Start () {
@@ -21,10 +20,9 @@ public class ExampleMovement : MonoBehaviour {
 
         GetComponent<Rigidbody2D>().AddForce(movement * 5.0f);
 
-        //if (Input.GetButton("Action_" + playerNumber))
-        //{
-        //    Debug.Log("|||||||||||||||||||||||ACTION!|||||||||||||||||||");
-        //}
-
+        if (Input.GetButton("Action_" + GetComponent<InputManager>().playerNumber))
+        {
+            Debug.Log("Action_" + GetComponent<InputManager>().playerNumber);
+        }
     }
 }
