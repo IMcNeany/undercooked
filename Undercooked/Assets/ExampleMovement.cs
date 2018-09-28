@@ -13,17 +13,18 @@ public class ExampleMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float moveHorizontal = Input.GetAxis("Horizontal_" + playerNumber);
 
-        float moveVertical = Input.GetAxis("Vertical_" + playerNumber);
-
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        Vector2 movement = new Vector2(
+            GetComponent<InputManager>().getHorizontal(),
+            GetComponent<InputManager>().getVertical()
+            );
 
         GetComponent<Rigidbody2D>().AddForce(movement * 5.0f);
 
-        if (Input.GetButton("Action_" + playerNumber)) {
-            Debug.Log("|||||||||||||||||||||||ACTION!|||||||||||||||||||");
-        }
+        //if (Input.GetButton("Action_" + playerNumber))
+        //{
+        //    Debug.Log("|||||||||||||||||||||||ACTION!|||||||||||||||||||");
+        //}
 
     }
 }
